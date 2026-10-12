@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17132f">
+  <title>Fruit Ninja: Quiz Challenge</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Fruit Ninja Quiz home"><span>🍉</span> FRUIT NINJA <b>QUIZ</b></a>
+      <button id="soundToggle" class="icon-button" aria-label="Toggle sound">🔊 Sound on</button>
+    </header>
+
+    <section id="homeScreen" class="screen home-screen">
+      <div class="hero-art" aria-hidden="true"><span class="hero-fruit fruit-a">🍓</span><span class="hero-fruit fruit-b">🍊</span><span class="hero-fruit fruit-c">🍉</span><span class="hero-fruit fruit-d">🍍</span><span class="ninja">🥷</span><span class="slash">✦</span></div>
+      <p class="eyebrow">THINK FAST. SLICE SMART.</p>
+      <h1>Fruit Ninja:<br><span>Quiz Challenge</span></h1>
+      <p class="intro">Test what you know! Read each question, then slice the fruit with the correct answer. Watch out for bombs!</p>
+      <div class="home-actions">
+        <button id="startButton" class="primary-button">⚔️ START GAME</button>
+        <button id="howButton" class="secondary-button">HOW TO PLAY</button>
+      </div>
+      <p class="tiny-note">A fun learning game • No account needed</p>
+    </section>
+
+    <section id="howScreen" class="screen how-screen hidden">
+      <button class="back-button" data-home>← Back</button>
+      <p class="eyebrow">READY, NINJA?</p><h2>How to play</h2>
+      <div class="instructions">
+        <article><span>❓</span><div><b>1. Read the question</b><p>Look at the question at the top of the game.</p></div></article>
+        <article><span>🍎</span><div><b>2. Slice the right fruit</b><p>Drag your mouse or finger across the fruit showing the correct answer. You can also click or tap a fruit.</p></div></article>
+        <article><span>💣</span><div><b>3. Avoid the bombs</b><p>Do not slice bombs! They take away points.</p></div></article>
+        <article><span>⭐</span><div><b>4. Earn points</b><p>Correct answer: +10 points. Wrong answer: −5 points. Bomb: −10 points.</p></div></article>
+      </div>
+      <button class="primary-button" id="howStartButton">LET'S PLAY!</button>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen hidden">
+      <div class="hud">
+        <div class="hud-stat"><small>SCORE</small><strong id="score">0</strong></div>
+        <div class="hud-stat center-stat"><small>QUESTION</small><strong id="questionCount">1 / 10</strong></div>
+        <div class="hud-stat right-stat"><small>STREAK</small><strong id="streak">🔥 0</strong></div>
+      </div>
+      <div class="question-card"><span class="question-label">🧠 YOUR QUESTION</span><h2 id="questionText">Loading question…</h2><p id="questionHint">Slice the fruit with the correct answer!</p></div>
+      <div class="play-area">
+        <canvas id="gameCanvas" aria-label="Fruit slicing game area"></canvas>
+        <div id="feedback" class="feedback hidden" role="status"></div>
+        <div class="canvas-tip">↗ SWIPE OR CLICK A FRUIT ↗</div>
+      </div>
+      <div class="game-footer"><span id="progressText">0 correct · 0 wrong</span><button id="quitButton" class="text-button">Quit game</button></div>
+    </section>
+
+    <section id="endScreen" class="screen end-screen hidden">
+      <div class="end-emoji" id="endEmoji">🏆</div><p class="eyebrow">MISSION COMPLETE</p><h2 id="endTitle">Amazing work, Ninja!</h2>
+      <p id="endMessage" class="intro"></p>
+      <div class="result-grid">
+        <div><small>FINAL SCORE</small><strong id="finalScore">0</strong></div>
+        <div><small>CORRECT</small><strong id="finalCorrect">0</strong></div>
+        <div><small>ACCURACY</small><strong id="finalAccuracy">0%</strong></div>
+      </div>
+      <div class="home-actions"><button id="replayButton" class="primary-button">↻ PLAY AGAIN</button><button class="secondary-button" data-home>MAIN MENU</button></div>
+    </section>
+    <footer>🍉 Slice the answer, not the bomb! 🍍</footer>
+  </main>
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
